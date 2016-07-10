@@ -208,6 +208,11 @@ main
   margin-top: 20px;
 }
 
+main article h3
+{
+  color: #0a3446;
+}
+
 main article img
 {
   width: 50px;
@@ -219,6 +224,13 @@ main article img
 main article a
 {
   float: right;
+  color: #b10733;
+  text-decoration: none;
+}
+
+main article a:hover
+{
+  color: #0a3446;
 }
 
 /*----- Footer -----*/
@@ -226,8 +238,13 @@ main article a
 footer
 {
   margin-top: 20px;
+  background-color: #0a3446;
 }
 
+footer h5
+{
+  color: white;
+}
 /*----- Media Queries -----*/
 
 /*@media (max-width: 500px)
