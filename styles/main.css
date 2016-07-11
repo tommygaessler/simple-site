@@ -11,6 +11,7 @@ red: #b10733
 navy: #0a3446
 */
 
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
 *
 {
@@ -72,6 +73,11 @@ navy: #0a3446
 
 /*----- Defaults -----*/
 
+body
+{
+  background: #0a3446;
+}
+
 img
 {
   width: 100%;
@@ -83,7 +89,6 @@ img
 header
 {
   background-color: #0a3446;
-  margin-bottom: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
   position: relative;
@@ -113,6 +118,12 @@ header a h4
   margin: 0;
   color: white;
   transition: 333ms all ease-in-out;
+  text-decoration: none;
+}
+
+header a
+{
+  text-decoration: none;
 }
 
 header a h4:hover
@@ -121,7 +132,7 @@ header a h4:hover
   transition: 333ms all ease-in-out;
 }
 
-header nav.main
+header nav.grandparent
 {
   float: right;
   border: 2px solid white;
@@ -132,7 +143,7 @@ header nav.main
   padding-right: 15px;
 }
 
-header nav.main a
+header nav.grandparent a
 {
   float: left;
   margin-right: 20px;
@@ -149,17 +160,17 @@ header nav a:hover
   transition: 333ms all ease-in-out;
 }
 
-header nav.main a:nth-child(3)
+header nav.grandparent a:nth-child(3)
 {
   margin-left: 20px;
 }
 
-header nav.main a:last-of-type
+header nav.grandparent a:last-of-type
 {
   margin-right: 0;
 }
 
-.grandparent
+.parent
 {
   position: relative;
   float: left;
@@ -168,14 +179,71 @@ header nav.main a:last-of-type
   display: inline-block;
 }
 
-.grandparent a
+.parent a
 {
-  margin-right: 0 !important;
+  margin-right: 0;
   margin-bottom: 0 !important;
   padding-bottom: 15px !important;
 }
 
-.parent
+.teenager
+{
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  background-color: #032d3e;
+  border: 2px solid white;
+  /*padding: 15px;*/
+  top: 33px;
+  transform: translateY(-3.5em);
+  z-index: -1;
+  transition: all 0.333s ease-in-out 0s, visibility 0s linear 0.333s, z-index 0s linear 0.01s;
+}
+
+.parent:hover .teenager
+{
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.333s;
+}
+
+.teenager a
+{
+  float: none;
+  margin: 0;
+  padding: 0 !important;
+  margin-bottom: 15px !important;
+  /*margin-top: 20px;*/
+  display: block;
+  margin-left: 15px !important;
+  /*margin-top: 15px;*/
+  margin-bottom: 15px;
+}
+
+.kid
+{
+  position: relative;
+  float: left;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.kid a
+{
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  padding-right: 15px !important;
+  padding-bottom: 15px !important;
+  margin-top: 0 !important;
+  /*padding-right: 15px !important;*/
+  width: 84px !important;
+  position: relative;
+}
+
+.baby
 {
   visibility: hidden;
   position: absolute;
@@ -183,52 +251,58 @@ header nav.main a:last-of-type
   background-color: #032d3e;
   border: 2px solid white;
   padding: 15px;
-  top: 33px;
-  transform: translateY(-3.5em);
-  z-index: -1;
+  top: 0;
+  left: 99px;
+  width: 104px;
+  transform: translateX(-6em);
+  z-index: -10;
   transition: all 0.333s ease-in-out 0s, visibility 0s linear 0.333s, z-index 0s linear 0.01s;
 }
 
-.grandparent:hover .parent
+.kid:hover .baby
 {
-  z-index: 1000;
+  z-index: 10;
   visibility: visible;
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateX(0%);
   transition-delay: 0s, 0s, 0.333s;
 }
 
-.parent a
+.baby a
 {
   float: none;
-  margin: 0;
+  margin: 0 !important;
   padding: 0 !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
   /*margin-top: 20px;*/
   display: block;
 }
 
-.parent a:nth-child(3)
-{
-  margin-left: 0 !important;
-}
-
-.parent a:last-of-type
+.baby a:last-of-type
 {
   margin-bottom: 0 !important;
+}
+
+.margin
+{
+  margin-top: 15px !important;
+  margin-right: 15px !important;
 }
 
 /*----- Main -----*/
 
 main
 {
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
 }
 
-p
+p.entry-text
 {
   margin-top: 0;
+  font-family: 'Inconsolata', monospace;
+  font-size: 30px;
 }
 
 main article h3 a
@@ -277,7 +351,6 @@ main article a:hover
 
 footer
 {
-  margin-top: 20px;
   background-color: #0a3446;
   padding-top: 25px;
   padding-bottom: 25px;
@@ -345,24 +418,34 @@ footer nav a span.genericon:hover
     margin: 15px;
   }
 
-  header nav.main
+  header nav.grandparent
   {
     float: none;
     text-align: center;
   }
 
-  header nav.main a
+  header nav.grandparent a
   {
     float: none;
     text-align: center;
   }
 
-  .grandparent
+  .parent
   {
     float: none;
+  }
+
+  nav.kid a:nth-child(3)
+  {
+    margin-left: 0 !important;
   }
 
   /*----- Main -----*/
+
+  p.entry-text
+  {
+    text-align: center;
+  }
 
   .two-third
   {
