@@ -3,6 +3,7 @@
   <head>
     <title>Simple Site</title>
     <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/genericons/genericons.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
   <body>
@@ -16,9 +17,9 @@
         </a>
         <nav class="main">
           <a href="index.html">Home</a>
-          <nav class="parent">
+          <nav class="grandparent">
             <a href="#">About</a>
-              <nav class="child">
+              <nav class="parent">
                 <a href="#">Company</a>
                 <a href="#">Jobs</a>
                 <a href="#">Team</a>
@@ -41,34 +42,42 @@
           <img src="images/golden-gate.jpg" alt="Picture of the Golden Gate Bridge" />
         </div>
         <article class="column one-third">
-          <h3>Article 1</h3>
-          <img src="images/surfer.jpg" alt="Picture of a surfer" />
+          <h3><a href="#">Article 1</a></h3>
+          <a href="#"><img src="images/surfer.jpg" alt="Picture of a surfer" /></a>
           <p>
             Trust fund chartreuse cliche church-key typewriter, bitters quinoa brooklyn before they sold out messenger bag fingerstache. Post-ironic cornhole four loko echo park migas vice. Irony freegan truffaut, chambray butcher VHS vegan fixie. 8-bit scenester sustainable, bushwick listicle messenger bag selfies neutra mlkshk pitchfork roof party next level sartorial.
           </p>
-          <a href="#">Read More >></a>
+          <a href="#" class="read-more">Read More >></a>
         </article>
         <article class="column one-third">
-          <h3>Article 2</h3>
-          <img src="images/rocks.jpg" alt="Picture of waves hitting rocks" />
+          <h3><a href="#">Article 2</a></h3>
+          <a href="#"><img src="images/rocks.jpg" alt="Picture of waves hitting rocks" /></a>
           <p>
             Trust fund chartreuse cliche church-key typewriter, bitters quinoa brooklyn before they sold out messenger bag fingerstache. Post-ironic cornhole four loko echo park migas vice. Irony freegan truffaut, chambray butcher VHS vegan fixie. 8-bit scenester sustainable, bushwick listicle messenger bag selfies neutra mlkshk pitchfork roof party next level sartorial.
           </p>
-          <a href="#">Read More >></a>
+          <a href="#" class="read-more">Read More >></a>
         </article>
         <article class="column one-third last-of-type">
-          <h3>Article 3</h3>
-          <img src="images/water.jpg" alt="Picture of a scuba diver underwater" />
+          <h3><a href="#">Article 3</a></h3>
+          <a href="#"><img src="images/water.jpg" alt="Picture of a scuba diver underwater" /></a>
           <p>
             Trust fund chartreuse cliche church-key typewriter, bitters quinoa brooklyn before they sold out messenger bag fingerstache. Post-ironic cornhole four loko echo park migas vice. Irony freegan truffaut, chambray butcher VHS vegan fixie. 8-bit scenester sustainable, bushwick listicle messenger bag selfies neutra mlkshk pitchfork roof party next level sartorial.
           </p>
-          <a href="#">Read More >></a>
+          <a href="#" class="read-more">Read More >></a>
         </article>
       </div>
     </main>
     <footer>
       <div class="row clearfix">
-        <h5>Copyright &copy; 2016 - All Rights Reserved - Domain Name</h5>
+        <h5>Copyright &copy; 2016 - All Rights Reserved - <a href="index.html">Water.io</a></h5>
+        <nav>
+          <a href="#"><span class="genericon genericon-facebook"></span></a>
+          <a href="#"><span class="genericon genericon-instagram"></span></a>
+          <a href="#"><span class="genericon genericon-github"></span></a>
+          <a href="#"><span class="genericon genericon-twitter"></span></a>
+          <a href="#"><span class="genericon genericon-codepen"></span></a>
+          <a href="#"><span class="genericon genericon-linkedin"></span></a>
+        </nav>
       </div>
     </footer>
     <script src="scripts/main.js"></script>

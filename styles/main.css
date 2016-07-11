@@ -52,7 +52,7 @@ navy: #0a3446
 
 .column.two-third
 {
-  width: 65%;
+  width: 66%;
 }
 
 .column.one-half
@@ -86,31 +86,45 @@ header
   margin-bottom: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
+  position: relative;
+  z-index: 0;
 }
 
-header img
+header a img
 {
   border: 2px solid white;
   height: 52px;
   width: auto;
   float: left;
+  transition: 333ms all ease-in-out;
 }
 
-header h4
+header a img:hover
+{
+  transition: 333ms all ease-in-out;
+  opacity: 0.7;
+}
+
+header a h4
 {
   float: left;
-  /*clear: both;*/
   position: absolute;
   top: 88px;
   margin: 0;
-  color: #eee;
+  color: white;
+  transition: 333ms all ease-in-out;
+}
+
+header a h4:hover
+{
+  color: #b10733;
+  transition: 333ms all ease-in-out;
 }
 
 header nav.main
 {
   float: right;
   border: 2px solid white;
-  /*padding: 15px;*/
   background-color: #032d3e;
   box-shadow: inset 0 0 5px #777;
   padding-top: 15px;
@@ -126,6 +140,13 @@ header nav.main a
   text-decoration: none;
   display: inline-block;
   margin-bottom: 15px;
+  transition: 333ms all ease-in-out;
+}
+
+header nav a:hover
+{
+  color: #b10733;
+  transition: 333ms all ease-in-out;
 }
 
 header nav.main a:nth-child(3)
@@ -138,37 +159,46 @@ header nav.main a:last-of-type
   margin-right: 0;
 }
 
-.parent
+.grandparent
 {
   position: relative;
   float: left;
   color: white;
   text-decoration: none;
   display: inline-block;
-  /*padding-bottom: 15px;
-  padding-top: 15px;*/
 }
 
-.parent a
+.grandparent a
 {
   margin-right: 0 !important;
   margin-bottom: 0 !important;
   padding-bottom: 15px !important;
 }
 
-.child
+.parent
 {
   visibility: hidden;
-  /*display: none;*/
   position: absolute;
   opacity: 0;
   background-color: #032d3e;
   border: 2px solid white;
   padding: 15px;
   top: 33px;
+  transform: translateY(-3.5em);
+  z-index: -1;
+  transition: all 0.333s ease-in-out 0s, visibility 0s linear 0.333s, z-index 0s linear 0.01s;
 }
 
-.child a
+.grandparent:hover .parent
+{
+  z-index: 1000;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.333s;
+}
+
+.parent a
 {
   float: none;
   margin: 0;
@@ -178,26 +208,14 @@ header nav.main a:last-of-type
   display: block;
 }
 
-.child a:nth-child(3)
+.parent a:nth-child(3)
 {
   margin-left: 0 !important;
 }
 
-.child a:last-of-type
+.parent a:last-of-type
 {
   margin-bottom: 0 !important;
-}
-
-.parent:hover{
-  color: green;
-}
-
-.parent:hover .child
-{
-  visibility: visible;
-  z-index: 1;
-  opacity: 1;
-  /*display: block;*/
 }
 
 /*----- Main -----*/
@@ -208,29 +226,51 @@ main
   margin-top: 20px;
 }
 
-main article h3
+p
 {
-  color: #0a3446;
+  margin-top: 0;
 }
 
-main article img
+main article h3 a
+{
+  color: #0a3446;
+  text-decoration: none;
+  transition: 333ms all ease-in-out;
+}
+
+main article h3 a:hover
+{
+  color: #b10733;
+  transition: 333ms all ease-in-out;
+}
+
+main article a img
 {
   width: 50px;
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
+  transition: 333ms all ease-in-out;
 }
 
-main article a
+main article a img:hover
+{
+  transition: 333ms all ease-in-out;
+  opacity: 0.7;
+}
+
+main article a.read-more
 {
   float: right;
   color: #b10733;
   text-decoration: none;
+  transition: 333ms all ease-in-out;
 }
 
 main article a:hover
 {
   color: #0a3446;
+  transition: 333ms all ease-in-out;
 }
 
 /*----- Footer -----*/
@@ -239,15 +279,115 @@ footer
 {
   margin-top: 20px;
   background-color: #0a3446;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 footer h5
 {
   color: white;
+  float: left;
+  margin: 0;
 }
+
+footer h5 a
+{
+  color: white;
+  text-decoration: none;
+  transition: 333ms all ease-in-out;
+}
+
+footer h5 a:hover
+{
+  color: #b10733;
+  transition: 333ms all ease-in-out;
+}
+
+footer nav
+{
+  float: right;
+}
+
+footer nav a span.genericon
+{
+  color: white;
+  text-decoration: none;
+  transition: 333ms all ease-in-out;
+}
+
+footer nav a span.genericon:hover
+{
+  color: #b10733;
+  text-decoration: none;
+  transition: 333ms all ease-in-out;
+}
+
 /*----- Media Queries -----*/
 
-/*@media (max-width: 500px)
+@media (max-width: 625px)
 {
 
-}*/
+  /*----- Header -----*/
+
+  header a img
+  {
+    float: none;
+    display: block;
+    margin: auto;
+  }
+
+  header a h4
+  {
+    float: none;
+    text-align: center;
+    position: relative;
+    top: 0;
+    margin: 15px;
+  }
+
+  header nav.main
+  {
+    float: none;
+    text-align: center;
+  }
+
+  header nav.main a
+  {
+    float: none;
+    text-align: center;
+  }
+
+  .grandparent
+  {
+    float: none;
+  }
+
+  /*----- Main -----*/
+
+  .two-third
+  {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .one-third
+  {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  /*----- Footer -----*/
+
+  footer h5
+  {
+    float: none;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  footer nav
+  {
+    float: none;
+    text-align: center;
+  }
+}
